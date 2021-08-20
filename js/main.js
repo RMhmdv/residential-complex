@@ -55,11 +55,12 @@ $(document).ready(function () {
   });
 
   flatsPathItem.on('mouseover', function () {
-        currentFlat = $(this).attr("data-item"); // записываем текущее значение в переменную с квартирами
-        flatsPath.removeClass("current-flat"); // удаляем класс квартир
-        flatsPathItem.removeClass("current-flats-item"); // удаляем класс характеристик квартиры
-        $(`[data-flat=${currentFlat}]`).toggleClass("current-flat"); // добавляем класс квартиры
-        $(`[data-item=${currentFlat}]`).toggleClass("current-flats-item"); // добавляем класс характеристик квартиры
+    currentFlat = $(this).attr("data-item"); // записываем текущее значение в переменную с квартирами
+    flatsPath.removeClass("current-flat"); // удаляем класс квартир
+    flatsPathItem.removeClass("current-flats-item"); // удаляем класс характеристик квартиры
+    $(`[data-flat=${currentFlat}]`).toggleClass("current-flat"); // добавляем класс квартиры
+    $(`[data-item=${currentFlat}]`).toggleClass("current-flats-item"); // добавляем класс характеристик квартиры
+    //  $(".flat-counter").text(currentFlat);
     })
 
   function toggleModal() {
