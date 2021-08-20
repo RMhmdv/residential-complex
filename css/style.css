@@ -193,10 +193,10 @@ path.current-floor {
   line-height: 19px;
   text-decoration: none;
 }
-.flat-link:hover {
+/* .flat-link:hover {
   text-decoration-line: underline;
   color: #3596F5;
-}
+} */
 .modal-alert {
   margin-top: 56px;
   font-style: italic;
@@ -217,6 +217,14 @@ path.current-floor {
   opacity: 0;
   cursor: pointer;
 }
-.flats path:hover {
+/* .flats path:hover {
+  opacity: 1;
+} */
+a.current-flats-item {
+  color: #3596f5; 
+  text-decoration: underline; /* добавляем подчёркивание */
+  cursor: pointer; 
+}
+path.current-flat {
   opacity: 1;
 }

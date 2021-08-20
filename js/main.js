@@ -5,9 +5,10 @@ $(document).ready(function () {
   var counterDown = $(".counter-down");
   var modal = $(".modal");
   var modalCloseButton = $(".modal-close-button");
-  var currentFlat = 2;
-  var flatPath = $(".flats path");
-  var viewFlatsButton = $(".view-flats")
+  var currentFlat = 1;
+  var flatsPath = $(".flats path");
+  var viewFlatsButton = $(".view-flats");
+  var flatsPathItem = $(".flat-item a"); // характеристики квартир
 
 
   floorPath.on('mouseover', function () {
@@ -44,6 +45,22 @@ $(document).ready(function () {
   //   flatPath.removeClass("current-flat");
   //   $(".modal-counter").text(currentFlat);
   // });
+
+  flatsPath.on('mouseover', function () {
+    currentFlat = $(this).attr("data-flat"); // записываем текущее значение в переменную с квартирами
+    flatsPath.removeClass("current-flat"); // удаляем класс квартир
+    flatsPathItem.removeClass("current-flats-item"); // удаляем класс характеристик квартиры
+    $(`[data-flat=${currentFlat}]`).toggleClass("current-flat"); // добавляем класс квартиры
+    $(`[data-item=${currentFlat}]`).toggleClass("current-flats-item"); // добавляем класс характеристик квартиры
+  });
+
+  flatsPathItem.on('mouseover', function () {
+        currentFlat = $(this).attr("data-item"); // записываем текущее значение в переменную с квартирами
+        flatsPath.removeClass("current-flat"); // удаляем класс квартир
+        flatsPathItem.removeClass("current-flats-item"); // удаляем класс характеристик квартиры
+        $(`[data-flat=${currentFlat}]`).toggleClass("current-flat"); // добавляем класс квартиры
+        $(`[data-item=${currentFlat}]`).toggleClass("current-flats-item"); // добавляем класс характеристик квартиры
+    })
 
   function toggleModal() {
     modal.toggleClass("is-open");    
